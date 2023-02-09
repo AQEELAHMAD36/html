@@ -1,0 +1,10 @@
+img:nth-child(even) { 
+    border: 5px solid #000;
+    border-style: solid dashed dotted;
+  }
+   
+  img:nth-child(odd) { 
+    border: 5px solid #FFF;
+    border-style: dotted dashed solid;
+  }
+  

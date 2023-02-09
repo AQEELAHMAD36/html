@@ -1,6 +1,6 @@
 function js_style() {
     let text = document.getElementById('text');
-    text.style.fontFamily = 'Sans-serif';
-    text.style.fontSize = '40px';
-    text.style.color = 'red';
+    text.style.fontFamily = 'Times New Roman';
+    text.style.fontSize = '20px';
+    text.style.color = 'yellow';
 }
