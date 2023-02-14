@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APOD</title>
+  </head>
+  <body>
+    <div id="img"></div>
+    <p id="copyright"></p>
+    <h3 id="title"></h3>
+    <h4 id="description"></h4>
+
+    <script>
+      const img = document.querySelector("#img");
+      const copyright = document.querySelector("#copyright");
+      const title = document.querySelector("#title");
+      const desc = document.querySelector("#description");
+      // using fetch
+      (async () => {
+        let response = await fetch(
+          "https://api.nasa.gov/planetary/apod?api_key=nSa6HFT9XO9DaA1umtyMyeSBfh7eI9d1M0lbWpti"
+        );
+        let data = await response.json();
+        console.log(data);
+        img.innerHTML = `<img src=${data.url} alt='nasa hd picture' />`;
+        copyright.innerText = data.copyright;
+        title.innerText = data.title;
+        desc.innerText = data.explanation;
+      })();
+    </script>
+  </body>
+</html>
